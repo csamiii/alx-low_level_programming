@@ -8,7 +8,7 @@
 
 int main(void)
 {
-	int a, b, i, result;
+	int a, b, result, i;
 
         a = 1;
         b = 2;
@@ -20,5 +20,5 @@ int main(void)
                 a = b;
                 b = result;
         }
-
+	printf("\n")
 }
