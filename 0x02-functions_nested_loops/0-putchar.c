@@ -2,7 +2,9 @@
 
 /**
  * main - Entry point
- *description: putchar
+ *
+ * description: putchar
+ *
  * Return: Always returns 0 
  */
 
