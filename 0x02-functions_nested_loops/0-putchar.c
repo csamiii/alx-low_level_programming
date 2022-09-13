@@ -2,9 +2,8 @@
 
 /**
  * main - Entry point
- *
- * Return: Always returns 0
- *
+ *description: putchar
+ * Return: Always returns 0 
  */
 
 int main(void)
