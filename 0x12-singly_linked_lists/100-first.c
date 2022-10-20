@@ -1,11 +1,12 @@
-#include "lists.h"
+#include <stdio.h>
+
+void printStatement(void) __attribute__ ((constructor));
+
 /**
- * show_first - executes before the main function
- *
- * Return: nothing
+ * printStatement - Print out a statment, before main function
  */
-void __attribute__((constructor)) first()
+void printStatement(void)
 {
-printf("You're beat! and yet, you must allow");
-printf(",\nI bore my house upon my back!\n");
+	printf("You're beat! and yet, you must allow,\n");
+	printf("I bore my house upon my back!\n");
 }
