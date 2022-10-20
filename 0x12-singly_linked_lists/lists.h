@@ -1,9 +1,7 @@
 #ifndef LISTS_H
 #define LISTS_H
 
-/*
- * File: lists.h
- * Auth: Fasusi Esther
+/**
  * Desc: Header file containing prototypes and definitions for all functions
  *       and types written in the 0x11-singly_linked_lists directory.
  */
@@ -15,7 +13,6 @@
  * @str: string - (malloc'ed string)
  * @len: length of the string
  * @next: points to the next node
- *
  * Description: singly linked list node structure
  *              for alx printf project
  */
