@@ -1,55 +1,41 @@
 #include "lists.h"
+
 /**
- * add_node_end - at new node to the end of a linked list
- * @head: a double pointer to the head of a linked list
- * @str: the string to be copied to str member of the linked list
- * Return: a pointer to the newly created node
+ * add_node_end - adds a new node at the end
+ * of a list_t list.
+ * @head: head of the linked list.
+ * @str: string to store in the list.
+ * Return: address of the head.
  */
 
 list_t *add_node_end(list_t **head, const char *str)
 {
-char *dup_str;
-list_t *new, *last;
+	list_t *new, *temp;
+	size_t nchar;
 
-new = malloc(sizeof(list_t));
-if (!new)
-return (NULL);
+	new = malloc(sizeof(list_t));
+	if (new == NULL)
+		return (NULL);
 
-dup_str = strdup(str);
-if (!str)
-{
-free(new);
-return (NULL);
-}
+	new->str = strdup(str);
 
-new->str = dup_str;
-new->len = _strlen(str);
-new->next = NULL;
+	for (nchar = 0; str[nchar]; nchar++)
+		;
 
-if (!*head)
-*head = new;
+	new->len = nchar;
+	new->next = NULL;
+	temp = *head;
 
-else
-{
-last = *head;
-while (last->next)
-last = last->next;
-last->next = new;
-}
+	if (temp == NULL)
+	{
+		*head = new;
+	}
+	else
+	{
+		while (temp->next != NULL)
+			temp = temp->next;
+		temp->next = new;
+	}
 
-return (*head);
-}
-
-/**
- * _strlen - returns the length of a string
- * @s: the string whose length is to be determined
- * Return: the length of s
- */
-int _strlen(const char *s)
-{
-int i = 0;
-
-while (*s++)
-i++;
-return (i);
+	return (*head);
 }
