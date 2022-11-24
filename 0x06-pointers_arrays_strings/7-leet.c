@@ -6,22 +6,19 @@
  *
  * Return: A pointer to the encoded string.
  */
-char *leet(char *str)
-{
-	int indx1 = 0, indx2;
-	char leet[8] = {'O', 'L', '?', 'E', 'A', '?', '?', 'T'};
 
-	while (str[indx1])
-	{
-		for (indx2 = 0; indx2 <= 7; indx2++)
-		{
-			if (str[indx1] == leet[indx2] ||
-			    str[indx1] - 32 == leet[indx2])
-				str[indx1] = indx2 + '0';
-		}
-
-		indx1++;
-	}
-
-	return (str);
-}
+char *leet(char *str){
+    char *lower = "aeotl";
+    char *upper = "AEOTL";
+    char *num = "43071";
+    
+    int i, j;
+    for(i=0; str[i] != '\0'; i++){
+        for(j=0; j<5; j++){
+            if(str[i] == lower[j] || str[i] == upper[j]){
+                str[i] = num[j];
+                break;
+            }
+        }
+    }
+    return (str);
